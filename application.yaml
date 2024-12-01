@@ -2,11 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd-nemesis
+  namespace: argocd 
 spec:
   project: default
   source:
     path: local/test
-    repoURL: 'https://github.com/wambabriand/nemesis-cd'
+    repoURL: 'https://github.com/wambabriand/nemesis-cd.git'
     targetRevision: HEAD
   destination:
     namespace: default
@@ -16,6 +17,9 @@ spec:
     syncOptions:
     - CreateNamespace=true
 
-    automated:
+    automated: # after 3 minutes pull and apply changes
       selfHeal: true
       prune: true   # Se si cqncella si cancella anche
+
+      # kubectl get secret argocd-initial-admin-secret -n argocd -o yml
+      # echo paaa | base64 --decoded
