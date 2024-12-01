@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-nemesis
+spec:
+  project: default
+  source:
+    path: local/test
+    repoURL: 'https://github.com/wambabriand/nemesis-cd'
+    targetRevision: HEAD
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'

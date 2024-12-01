@@ -1,0 +1,10 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nemesis-backend-configmap
+data:
+  db-username: nemesis
+  db-name: nemesis_dev
+  db-port: "5432"
+  db-host: "51.254.114.114"
