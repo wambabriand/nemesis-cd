@@ -8,7 +8,7 @@ spec:
   source:
     path: local/test
     repoURL: 'https://github.com/wambabriand/nemesis-cd'
-    targetRevision: HEAD
+    targetRevision: main
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
