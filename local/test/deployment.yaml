@@ -21,7 +21,7 @@ spec:
         - containerPort: 3000
         env:
         - name: DB_HOST
-          value: "1.254.114.114"
+          value: "51.254.114.114"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
