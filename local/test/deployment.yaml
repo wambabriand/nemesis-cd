@@ -21,15 +21,15 @@ spec:
         - containerPort: 3000
         env:
         - name: DB_HOST
-          value: "10.152.183.248"
+          value: "1.254.114.114"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
-          value: ps_user
+          value: nemesis
         - name: DB_PASS
-          value: ps_pass
+          value: nemesis
         - name: DB_NAME
-          value: ps_db
+          value: nemesis_dev
 ---
 apiVersion: v1
 kind: Service
