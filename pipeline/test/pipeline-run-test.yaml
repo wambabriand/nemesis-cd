@@ -19,4 +19,4 @@ spec:
             storage: 1Gi
   params:
   - name: repo-url
-    value: git@github.com:wambabriand/nemesis-cd.git
+    value: https://github.com/wambabriand/nemesis-cd.git
