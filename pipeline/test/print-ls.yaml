@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: print-ls
+spec:
+  description: print ls to see what we have at the begining
+  workspaces:
+  - name: tmp
+  steps:
+  - name: lsss
+    image: alpine:latest
+    script: | 
+      #!/usr/bin/env sh
+      echo '---------BEGIN----------'
+      ls 
+      pwd
+      echo '---------MIDDLE----------'
+      ls -r $(workspaces.tmp.path)
+      echo '---------END----------'
