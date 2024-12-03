@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    path: local/test
+    path: pipeline/test
     repoURL: 'https://github.com/wambabriand/nemesis-cd'
     targetRevision: main
   destination:
-    namespace: default
+    namespace: pipeline
     server: 'https://kubernetes.default.svc'
   
   syncPolicy:
