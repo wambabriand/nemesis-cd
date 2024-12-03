@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-nemesis
+  name: argocd-pipeline
   namespace: argocd 
 spec:
   project: default
