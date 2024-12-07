@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    path: local/test
+    path: local/
     repoURL: 'https://github.com/wambabriand/nemesis-cd'
     targetRevision: main
   destination:

@@ -11,13 +11,3 @@ spec:
       name: nemesis-frontend-service
       port:
         number: 80
-  rules:
-  - http:
-      paths:
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: nemesis-backend-service
-            port:
-              number: 8089

@@ -16,4 +16,4 @@ spec:
       pwd
       echo '---------MIDDLE----------'
       ls -r $(workspaces.tmp.path)
-      echo '---------END----------'
+      echo '---------END----------'     
