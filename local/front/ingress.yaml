@@ -1,13 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nemesis-frontend-ingress
+  name: dev-wordpress-ingress
+  namespace: dev
   annotations:
-    kubernetes.io/ingress.class: "nginx" # ou autre contrôleur d'ingress utilisé
+    kubernetes.io/ingress.class: "nginx"
 spec:
-  ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: nemesis-frontend-service
-      port:
-        number: 80
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: nemesis-frontend-service
+            port:
+              number: 80
