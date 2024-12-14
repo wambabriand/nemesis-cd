@@ -5,10 +5,13 @@ metadata:
   namespace: argocd 
 spec:
   project: default
-  source:
-    path: local/
-    repoURL: 'https://github.com/wambabriand/nemesis-cd'
-    targetRevision: main
+  sources:
+    - path: local/front
+      repoURL: 'https://github.com/wambabriand/nemesis-cd'
+      targetRevision: main
+    - path: local/back
+      repoURL: 'https://github.com/wambabriand/nemesis-cd'
+      targetRevision: main
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
@@ -24,4 +27,4 @@ spec:
       # kubectl get secret argocd-initial-admin-secret -n argocd -o yml
       # echo paaa | base64 --decoded
 
-      #kubectl port-forward svc/argocd-server 8081:3000
+      #kubectl port-forward svc/argocd-server 8080:80
