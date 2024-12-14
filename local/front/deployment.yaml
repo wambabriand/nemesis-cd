@@ -38,7 +38,7 @@ metadata:
     app: nemesis-frontend
   name: nemesis-frontend-service
 spec:
-  type: NodePort
+  type: ClusterIP # NodePort
   selector:
     app: nemesis-frontend  # this have to match with the service
   ports:
@@ -46,3 +46,4 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
+
