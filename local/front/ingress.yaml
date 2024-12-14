@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: "192.168.99.150"
+  - host: nemesis-test-wamba.com
     http:
       paths:
       - pathType: Prefix
@@ -16,3 +16,4 @@ spec:
             name: nemesis-frontend-service
             port:
               number: 80
+              
