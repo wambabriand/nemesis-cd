@@ -5,7 +5,8 @@ metadata:
   name: nemesis-frontend-ingress
 spec:
   rules:
-  - http:
+  - host: nemesis-test-wamba.com
+    http:
       paths:
       - path: /
         pathType: Prefix
@@ -14,6 +15,3 @@ spec:
             name: nemesis-frontend-service
             port:
               number: 80
-
-
-
