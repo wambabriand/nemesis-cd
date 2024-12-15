@@ -5,8 +5,8 @@ metadata:
   name: nemesis-frontend-ingress
 spec:
   rules:
-  - host: nemesis-test-wamba.com
-    http:
+# - host: nemesis-test-wamba.com
+  - http:
       paths:
       - path: /
         pathType: Prefix
