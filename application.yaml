@@ -24,7 +24,7 @@ spec:
       selfHeal: true
       prune: true   # Se si cqncella si cancella anche
 
-      # kubectl get secret argocd-initial-admin-secret -n argocd -o yml
-      # echo paaa | base64 --decoded
+      # kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+      # echo paaa | base64 --decoded  OMZXInglpEI1U8Rj
 
-      #kubectl port-forward svc/argocd-server 8080:80
+      # kubectl port-forward svc/argocd-server 8080:80
