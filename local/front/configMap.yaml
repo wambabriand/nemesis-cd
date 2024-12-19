@@ -16,7 +16,7 @@ data:
           proxy_pass http://nemesis-backend-service:8089/api;
       }
       # listen [::]:443 ssl ipv6only=on; # managed by Certbot
-      # listen 443 ssl; # managed by Certbot
+      #  listen 443 ssl; # managed by Certbot
       # ssl_certificate /etc/letsencrypt/live/nemesis-test-wamba.com/fullchain.pem; # managed by Certbot
       # ssl_certificate_key /etc/letsencrypt/live/nemesis-test-wamba.com/privkey.pem; # managed by Certbot
       # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
