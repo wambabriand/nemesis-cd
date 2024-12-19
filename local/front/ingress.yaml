@@ -7,7 +7,7 @@ spec:
   tls:
     - hosts:
         - nemesis-test-wamba.com
-      secretName: nemesis-certificate-tls-secret
+      secretName: tls-s
   rules:
 # - host: nemesis-test-wamba.com test
   - http:
