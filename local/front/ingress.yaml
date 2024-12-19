@@ -14,7 +14,7 @@ spec:
           service:
             name: nemesis-frontend-service
             port:
-              number: 81
+              number: 80
 
 
               
