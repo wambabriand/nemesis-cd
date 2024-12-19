@@ -4,6 +4,10 @@ kind: Ingress
 metadata:
   name: nemesis-frontend-ingress
 spec:
+  tls:
+    - hosts:
+        - nemesis-test-wamba.com
+      secretName: nemesis-certificate-tls-secret
   rules:
 # - host: nemesis-test-wamba.com test
   - http:
