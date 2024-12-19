@@ -3,6 +3,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nemesis-frontend-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt
 spec:
   tls:
     - hosts:
