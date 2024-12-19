@@ -7,10 +7,10 @@ spec:
   tls:
     - hosts:
         - nemesis-test-wamba.com
-      secretName: tls-s
+      secretName: lets-encrypt-priviate-key
   rules:
-# - host: nemesis-test-wamba.com test
-  - http:
+  - host: nemesis-test-wamba.com
+    http:
       paths:
       - path: /
         pathType: Prefix
