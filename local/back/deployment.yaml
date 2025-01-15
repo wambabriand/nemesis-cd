@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nemesis-backend
-        image: briandwamba/nemesis:backend-v0.0.2
+        image: briandwamba/nemesis:backend-v0.0.3
         ports:
         - containerPort: 8089
         env:
