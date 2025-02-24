@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: arlette
-        image: nginx
+        image: briandwamba/nemesis:arlette
         imagePullPolicy: Always
         ports:
         - containerPort: 80
