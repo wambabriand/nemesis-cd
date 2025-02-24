@@ -9,6 +9,7 @@ spec:
   tls:
     - hosts:
         - nemesis-test-wamba.com
+        - arlette-consultant.com
       secretName: lets-encrypt-priviate-key
   rules:
   - host: nemesis-test-wamba.com
