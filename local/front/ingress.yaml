@@ -5,24 +5,17 @@ metadata:
   name: nemesis-frontend-ingress
   annotations:
     cert-manager.io/cluster-issuer: lets-encrypt
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
     - hosts:
         - nemesis-test-wamba.com
         - arlette-consultant.com
+        - af-lookhere.com
       secretName: lets-encrypt-priviate-key
   rules:
   - host: nemesis-test-wamba.com
     http:
       paths:
-      - path: /lh
-        pathType: Prefix
-        backend:
-          service:
-            name: lookhere-frontend-service
-            port:
-              number: 80
       - path: /
         pathType: Prefix
         backend:
@@ -39,6 +32,17 @@ spec:
         backend:
           service:
             name: arlette-service
+            port:
+              number: 80
+              
+  - host: af-lookhere.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lookhere-frontend-service
             port:
               number: 80
 
