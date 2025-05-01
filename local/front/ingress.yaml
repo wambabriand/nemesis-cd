@@ -5,6 +5,7 @@ metadata:
   name: nemesis-frontend-ingress
   annotations:
     cert-manager.io/cluster-issuer: lets-encrypt
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
     - hosts:
@@ -15,6 +16,13 @@ spec:
   - host: nemesis-test-wamba.com
     http:
       paths:
+      - path: /lh
+        pathType: Prefix
+        backend:
+          service:
+            name: lookhere-frontend-service
+            port:
+              number: 80
       - path: /
         pathType: Prefix
         backend:
