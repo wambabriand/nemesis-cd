@@ -4,12 +4,12 @@ kind: Deployment
 metadata:
   name: db-deployment
   labels:
-    app: db-backend
+    app: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db-backend
+      app: db
   template:
     metadata:
       labels:
