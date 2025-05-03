@@ -31,6 +31,13 @@ spec:
             secretKeyRef:
               name: nemesis-backend-secret
               key: db-password
+        volumeMounts:
+          - name: db-pvc
+            mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: db-pvc
+          persistentVolumeClaim:
+            claimName: db-pvc
 
 ---
 apiVersion: v1
