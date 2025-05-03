@@ -31,10 +31,20 @@ spec:
             secretKeyRef:
               name: nemesis-backend-secret
               key: db-password
+
         volumeMounts:
           - name: db-pvc
             mountPath: /var/lib/postgresql/data
+          - name: config
+            mountPath: /var/lib/postgresql/data/postgresql.conf
+            subPath: postgresql.conf
+          - name: config
+            mountPath: /var/lib/postgresql/data/pg_hba.conf
+            subPath: pg_hba.conf
       volumes:
+        - name: config
+          configMap:
+            name: pg-config
         - name: db-pvc
           persistentVolumeClaim:
             claimName: db-pvc

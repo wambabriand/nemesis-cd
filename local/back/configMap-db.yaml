@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pg-config
+data:
+  postgresql.conf: |
+    listen_addresses = '*'
+    # other settings if needed
+
+  pg_hba.conf: |
+    # TYPE  DATABASE        USER            ADDRESS                 METHOD
+    host    all             all             0.0.0.0/0               md5
