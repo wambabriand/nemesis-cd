@@ -6,7 +6,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: db
@@ -19,8 +19,13 @@ spec:
       - name: db
         image: mcr.microsoft.com/mssql/server:2017-latest
         ports:
-        - containerPort: 5432
+        - containerPort: 1433
         env:
+        - name: ACCEPT_EULA
+          value: "Y" 
+        - name: MSSQL_SA_PASSWORD
+          value: Lookhere123.
+        
         - name: POSTGRES_USER
           valueFrom:
             configMapKeyRef:
@@ -56,6 +61,6 @@ spec:
   selector:
     app: db
   ports:
-    - port: 5432
-      targetPort: 5432
+    - port: 1433
+      targetPort: 1433
       nodePort: 30032
