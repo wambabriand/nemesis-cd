@@ -26,25 +26,11 @@ spec:
         - name: MSSQL_SA_PASSWORD
           value: Lookhere123.
         
-        - name: POSTGRES_USER
-          valueFrom:
-            configMapKeyRef:
-              name: nemesis-backend-configmap
-              key: db-host
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: nemesis-backend-secret
-              key: db-password
-
         volumeMounts:
           - name: db-pvc
             mountPath: /var/lib/postgresql/data
        
       volumes:
-        - name: config
-          configMap:
-            name: pg-config
         - name: db-pvc
           persistentVolumeClaim:
             claimName: db-pvc
