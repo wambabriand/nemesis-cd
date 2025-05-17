@@ -6,7 +6,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: db
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: postgres:14.10
+        image: mcr.microsoft.com/mssql/server:2017-latest
         ports:
         - containerPort: 5432
         env:
