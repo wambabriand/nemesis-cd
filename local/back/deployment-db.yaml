@@ -24,7 +24,7 @@ spec:
         - name: ACCEPT_EULA
           value: "Y" 
         - name: MSSQL_SA_PASSWORD
-          value: Lookhere123.
+          value: Lookhere123!
         
         volumeMounts:
           - name: db-pvc
