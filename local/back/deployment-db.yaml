@@ -18,6 +18,14 @@ spec:
       containers:
       - name: db
         image: mcr.microsoft.com/mssql/server:2017-latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
         ports:
         - containerPort: 1433
         env:
