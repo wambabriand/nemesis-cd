@@ -1,0 +1,33 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lookhere-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt
+spec:
+  tls:
+    - hosts:
+        - af-lookhere.com
+      secretName: lets-encrypt-priviate-key
+  rules:
+  - host: af-lookhere.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lookhere-frontend-service
+            port:
+              number: 80
+      - path: /db
+        pathType: Prefix
+        backend:
+          service:
+            name: db-service
+            port:
+              number: 80
+
+
+              
