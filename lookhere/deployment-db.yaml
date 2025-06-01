@@ -20,11 +20,11 @@ spec:
         image: mcr.microsoft.com/mssql/server:2017-latest
         resources:
           requests:
-            memory: "512Mi"
-            cpu: "250m"
-          limits:
             memory: "1Gi"
-            cpu: "500m"
+            cpu: "1000m"
+          limits:
+            memory: "3Gi"
+            cpu: "2000m"
 
         ports:
         - containerPort: 1433
