@@ -1,0 +1,59 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lookhere-backend-deployment
+  labels:
+    app: lookhere-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lookhere-backend
+  template:
+    metadata:
+      labels:
+        app: lookhere-backend
+    spec:
+      containers:
+      - name: lookhere-backend
+        image: vinimarco/lookhere:v1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: DB_SERVER
+          value: "45.151.123.179"
+        - name: DB_PORT
+          value: 30032
+        - name: DB_NAME
+          value: LookHere
+        - name: DB_USER
+          value: SA
+        - name: DB_PASSWORD
+          value: Lookhere123!
+        - name: JWT_KEY
+          value: b2845e8b5108d0e75044ed92bf3f27e1081cda18ea88cf3231e993ed4d09453e
+        - name: GOOGLE_AUTHENTICATION_PWD
+          value: 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
+        - name: FACEBOOK_AUTHENTICATION_PWD
+          value: db4213c194d8f398cde6b7bc402e7f25
+        - name: EMAIL_CONFIG_PWD
+          value: "jsxb jvnp tskg gyxq"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: lookhere-backend
+  name: lookhere-backend-service
+spec:
+  type: NodePort
+  selector:
+    app: lookhere-backend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8089
+      targetPort: 8089
