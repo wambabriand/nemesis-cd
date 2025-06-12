@@ -16,10 +16,18 @@ spec:
     spec:
       containers:
       - name: lookhere-frontend
-        image: briandwamba/nemesis:lookhere-frontend-003
+        image: briandwamba/nemesis:lookhere-frontend-002
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d/
+          name: configmap-nginx-volume
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: lookhere-frontend-configmap
+        name: configmap-nginx-volume
         
 ---
 apiVersion: v1
