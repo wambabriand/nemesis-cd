@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lookhere-frontend
-        image: briandwamba/nemesis:lookhere-frontend-001
+        image: briandwamba/nemesis:lookhere-frontend-003
         imagePullPolicy: Always
         ports:
         - containerPort: 80
