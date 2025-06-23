@@ -42,6 +42,14 @@ spec:
           value: "db4213c194d8f398cde6b7bc402e7f25"
         - name: EMAIL_CONFIG_PWD
           value: "jsxb jvnp tskg gyxq"
+        - name: Password
+          value: "Lookhere123"
+        - name: AdsImagesPath
+          value: "//45.151.123.179/sharedFolder/ads-img"
+        - name: PublicationsImagesPath
+          value: "//45.151.123.179/sharedFolder/publications-Img"
+
+        
 ---
 apiVersion: v1
 kind: Service
