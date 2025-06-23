@@ -45,11 +45,14 @@ spec:
         - name: Password
           value: "Lookhere123"
         - name: AdsImagesPath
-          value: "//45.151.123.179/sharedFolder/ads-img"
+          value: "\\\\45.151.123.179\\sharedFolder\\ads-img"
         - name: PublicationsImagesPath
-          value: "//45.151.123.179/sharedFolder/publications-Img"
-
-        
+          value: "\\\\45.151.123.179\\sharedFolder\\publications-Img"
+        - name: Username
+          value: "root"
+        - name: Domain
+          value: "root"
+          
 ---
 apiVersion: v1
 kind: Service
