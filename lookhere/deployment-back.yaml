@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: lookhere-backend
-        image: vinimarco/lookhere:v1.0
+        image: vinimarco/lookhere:v1.0.4
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -42,12 +42,8 @@ spec:
           value: "db4213c194d8f398cde6b7bc402e7f25"
         - name: EMAIL_CONFIG_PWD
           value: "jsxb jvnp tskg gyxq"
-        - name: Password
+        - name: LOOKHERE_SETTINGS_PWD
           value: "Lookhere123"
-        - name: AdsImagesPath
-          value: "\\\\45.151.123.179\\sharedFolder\\ads-img"
-        - name: PublicationsImagesPath
-          value: "\\\\45.151.123.179\\sharedFolder\\publications-Img"
         - name: Username
           value: "root"
         - name: Domain
