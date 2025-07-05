@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: lookhere-backend
-        image: vinimarco/lookhere:v1.0.4
+        image: vinimarco/lookhere:v1.0.5
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
