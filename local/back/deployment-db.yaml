@@ -17,23 +17,20 @@ spec:
     spec:
       containers:
       - name: db
-        image: mcr.microsoft.com/mssql/server:2017-latest
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "250m"
-          limits:
-            memory: "1Gi"
-            cpu: "500m"
-
+        image: postgres:14.10
         ports:
-        - containerPort: 1433
+        - containerPort: 5432
         env:
-        - name: ACCEPT_EULA
-          value: "Y" 
-        - name: MSSQL_SA_PASSWORD
-          value: Lookhere123!
-        
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: nemesis-backend-configmap
+              key: db-host
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nemesis-backend-secret
+              key: db-password
         volumeMounts:
           - name: db-pvc
             mountPath: /var/lib/postgresql/data
@@ -55,6 +52,6 @@ spec:
   selector:
     app: db
   ports:
-    - port: 1433
-      targetPort: 1433
+    - port: 5432
+      targetPort: 5432
       nodePort: 30032
