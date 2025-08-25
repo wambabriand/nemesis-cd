@@ -21,6 +21,11 @@ spec:
         ports:
         - containerPort: 5432
         env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: nemesis-backend-configmap
+              key: db-name
         - name: POSTGRES_USER
           valueFrom:
             configMapKeyRef:
