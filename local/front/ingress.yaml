@@ -10,7 +10,6 @@ spec:
     - hosts:
         - nemesis-test-wamba.com
         - arlette-consultant.com
-        - af-lookhere.com
       secretName: lets-encrypt-priviate-key
   rules:
   - host: nemesis-test-wamba.com
@@ -23,6 +22,13 @@ spec:
             name: nemesis-frontend-service
             port:
               number: 80
+      - path: /db
+        pathType: Prefix
+        backend:
+          service:
+            name: db-service
+            port:
+              number: 5432
 
   - host: arlette-consultant.com
     http:
@@ -34,17 +40,4 @@ spec:
             name: arlette-service
             port:
               number: 80
-              
-  - host: af-lookhere.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: lookhere-frontend-service
-            port:
-              number: 80
 
-
-              
