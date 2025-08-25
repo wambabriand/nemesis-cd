@@ -25,12 +25,12 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: nemesis-backend-configmap
-              key: db-name
+              key: db-username
         - name: POSTGRES_USER
           valueFrom:
             configMapKeyRef:
               name: nemesis-backend-configmap
-              key: db-host
+              key: db-user
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
