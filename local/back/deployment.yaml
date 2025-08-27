@@ -32,10 +32,7 @@ spec:
               name: nemesis-backend-configmap
               key: db-port
         - name: POSTGRES_DB
-          valueFrom:
-            configMapKeyRef:
-              name: nemesis-backend-configmap
-              key: db-name
+          value: db-service
         - name: POSTGRES_PASS
           valueFrom:
             secretKeyRef:
