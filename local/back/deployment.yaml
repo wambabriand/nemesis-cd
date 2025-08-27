@@ -22,17 +22,17 @@ spec:
         - containerPort: 8089
         env:
         - name: POSTGRES_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: nemesis-backend-configmap
-              key: db-host
+          value: db-service
         - name: POSTGRES_PORT
           valueFrom:
             configMapKeyRef:
               name: nemesis-backend-configmap
               key: db-port
         - name: POSTGRES_DB
-          value: db-service
+          valueFrom:
+            configMapKeyRef:
+              name: nemesis-backend-configmap
+              key: db-name
         - name: POSTGRES_PASS
           valueFrom:
             secretKeyRef:
