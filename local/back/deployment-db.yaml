@@ -6,7 +6,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: db
@@ -25,12 +25,12 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: nemesis-backend-configmap
-              key: db-username
+              key: db-name
         - name: POSTGRES_USER
           valueFrom:
             configMapKeyRef:
               name: nemesis-backend-configmap
-              key: db-user
+              key: db-username
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
